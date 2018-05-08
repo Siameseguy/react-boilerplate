@@ -1,0 +1,16 @@
+button {
+  color: #fff;
+}
+
+a {
+  /* color: #fff; */
+  transition: all 0.2s ease;
+}
+a:link {
+  text-decoration: none;
+  margin-right: 10px;
+  /* color: #fff !important; */
+}
+a:hover {
+  color: #aaa;
+}
