@@ -2,13 +2,13 @@
 
 const express = require('express')
 const path = require('path')
-const moragn = require('morgan')
+const morgan = require('morgan')
 const bodyParser = require('body-parser')
 
 const app = express()
 
 //logging middleware
-app.use(morgan(dev))
+app.use(morgan('dev'))
 
 //body parsing middleware
 app.use(bodyParser.json())

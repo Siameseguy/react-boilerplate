@@ -1,6 +1,6 @@
 'use strict'
 
-const { resolve } = require('path')
+const {resolve} = require('path')
 
 module.exports = {
   entry: './app/main',
@@ -20,7 +20,7 @@ module.exports = {
         include: resolve(__dirname, './app'),
         loader: 'babel-loader',
         query: {
-          presets: ['react', 'es2015']
+          presets: ['react', 'stage-2']
         }
       }
     ]
