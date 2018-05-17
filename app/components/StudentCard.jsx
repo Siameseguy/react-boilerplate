@@ -2,7 +2,8 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 
 const StudentCard = (props) => {
-  const {students} = props
+  const {students, deleteFunc} = props
+
   return (
     <div className="student-container container">
       <div className="student-add">
@@ -19,7 +20,7 @@ const StudentCard = (props) => {
             </Link>
             <div className="student-buttons">
               <button className="btn-default">Edit</button>
-              <button className="btn-default">Delete</button>
+              <button className="btn-default" onClick={deleteFunc}>Delete</button>
             </div>
           </div>
         )

@@ -43,11 +43,11 @@ const AddStudentForm = (props) => {
   )
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownPropss) => {
   return {addStudentFormInputs: state.addStudentFormInputs}
 }
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     handleChange: function (evt) {
       const inputValue = {
@@ -64,7 +64,8 @@ const mapDispatchToProps = dispatch => {
         image: evt.target.image.value,
         email: evt.target.email.value
       }
-      dispatch(postNewStudent(newStudent))
+      const history = ownProps.history
+      dispatch(postNewStudent(newStudent, history))
 
     }
   }

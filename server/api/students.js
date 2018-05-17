@@ -53,4 +53,7 @@ router.delete('/:id', async(req, res, next) => {
   }
 })
 
+// router.delete('/:id', (req, res, next) => {   Student.destroy({      where: {
+//        id: req.params.id      }    })   .then(() => res.sendStatus) })
+
 module.exports = router

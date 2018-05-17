@@ -4,9 +4,9 @@ import {connect} from 'react-redux'
 import StudentCard from './StudentCard'
 
 const Student = props => {
-  const {allStudents} = props
-  return (<StudentCard students={allStudents}/>)
+  const {allStudents, deleteFunc} = props
 
+  return (<StudentCard students={allStudents} deleteFunc={deleteFunc}/>)
 }
 
 const mapStateToProps = function (state) {

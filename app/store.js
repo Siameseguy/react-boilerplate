@@ -67,24 +67,26 @@ export function fetchStudents() {
   }
 }
 
-export function postNewStudent(student) {
+export function postNewStudent(student, history) {
   return function thunk(dispatch) {
     return axios
       .post('/api/students', student)
       .then(res => res.data)
       .then(newStudent => {
         dispatch(createNewStudent(newStudent))
+        history.push(`/students/${newStudent.id}`)
       })
   }
 }
 
-export function destroyStudent(id) {
+export function destroyStudent(history) {
   return function thunk(dispatch) {
     return axios
-      .delete(`/api/students/${id}`)
+      .delete(`/api/students/${req.params.id}`)
       .then(res => res.data)
       .then(deletedStudent => {
         dispatch(deleteStudent(deletedStudent))
+        history.push('/students')
       })
   }
 }
@@ -117,6 +119,14 @@ export const reducer = (state = initialState, action) => {
           ...state.allStudents,
           action.allStudents
         ]
+      }
+
+    case DELETE_STUDENT:
+      return {
+        ...state,
+        allStudents: state
+          .allStudents
+          .filter(student => student.id !== action.studentId)
       }
 
     default:
